@@ -1,0 +1,11 @@
+{
+  "name": "webble-espurino",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "author": "Gabriel Menezes",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.27.0"
+  }
+}
