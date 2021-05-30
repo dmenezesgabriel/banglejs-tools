@@ -1,16 +1,43 @@
 <html>
   <head>
+    <title>Bangle.js tools</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
   </head>
   <body>
-    <button onclick="Puck.setTime();">Set time!</button>
-    <svg viewBox="0 0 24 24">
-      <path
-        fill="currentColor"
-        d="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z"
-      />
-    </svg>
+    <div class="buttons">
+      <div class="inline-block">
+        <button id="btnConnect">Connect</button>
+      </div>
+      <div class="inline-block">
+        <button id="btnSetTime" onclick="Puck.setTime();">Set time!</button>
+      </div>
+      <div class="inline-block">
+        <svg id="lightBulb" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="vizzes">
+      <div class="inline-block">
+        <p>
+          X: <span class="bar"><span id="barX"></span></span>
+        </p>
+        <p>
+          Y: <span class="bar"><span id="barY"></span></span>
+        </p>
+        <p>
+          Z: <span class="bar"><span id="barZ"></span></span>
+        </p>
+      </div>
+      <div class="inline-block"></div>
+    </div>
+
     <script src="https://www.puck-js.com/puck.js"></script>
     <script src="js/lightBulb.js"></script>
+    <script src="js/accelerometer.js"></script>
   </body>
 </html>
