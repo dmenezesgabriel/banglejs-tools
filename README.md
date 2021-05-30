@@ -1,6 +1,8 @@
 # Web Bluetooth Espurino
 
-## Local development usage
+Access the [page](https://dmenezesgabriel.github.io/banglejs-tools/)
+
+## Local development
 
 HTTPS local server
 

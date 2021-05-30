@@ -1,5 +1,5 @@
 run:
-	node app.js
+	yarn run app
 
 certficates:
 	./scripts/gen-cer.sh

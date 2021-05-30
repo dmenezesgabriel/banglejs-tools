@@ -4,6 +4,9 @@
   "main": "app.js",
   "type": "module",
   "author": "Gabriel Menezes",
+  "scripts": {
+    "app": "node app.js"
+  },
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.27.0"
