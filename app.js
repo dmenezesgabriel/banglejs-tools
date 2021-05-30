@@ -14,5 +14,11 @@ app.use(express.static("public"));
 
 const httpServer = createServer(credentials, app);
 
+process.on("SIGINT", function () {
+  console.log("\nGracefully shutting down from SIGINT (Ctrl-C)");
+  // some other closing procedures go here
+  process.exit(1);
+});
+
 httpServer.listen(process.env.PORT || 8000);
 console.log("Server started at https://localhost:" + port);

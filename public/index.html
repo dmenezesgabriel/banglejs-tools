@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
+    <button onclick="Puck.setTime();">Set time!</button>
     <svg viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -10,7 +11,6 @@
       />
     </svg>
     <script src="https://www.puck-js.com/puck.js"></script>
-    <button onclick="Puck.write('LED1.set();\n');">LED On!</button>
-    <button onclick="Puck.write('LED1.reset();\n');">LED Off!</button>
+    <script src="js/lightBulb.js"></script>
   </body>
 </html>
