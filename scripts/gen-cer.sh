@@ -18,28 +18,28 @@ password=dummypassword
 echo "Generating key request"
 
 # Generate a key
-openssl genrsa -passout pass:$password -out key.pem
+openssl genrsa -passout pass:$password -out ssl/key.pem
 
 # Create the request
 echo "Creating CSR"
-openssl req -new -key key.pem -out csr.pem -passin pass:$password \
+openssl req -new -key key.pem -out ssl/csr.pem -passin pass:$password \
     -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 
 # Create cert.pem
-openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
+openssl x509 -req -days 9999 -in ssl/csr.pem -signkey ssl/key.pem -out ssl/cert.pem
 
 # Remove csr
-rm csr.pem
+rm ssl/csr.pem
 
 echo "---------------------------"
 echo "-----Below is your Cert----"
 echo "---------------------------"
 echo
-cat cert.pem
+cat ssl/cert.pem
 
 echo
 echo "---------------------------"
 echo "-----Below is your Key-----"
 echo "---------------------------"
 echo
-cat key.pem
+cat ssl/key.pem

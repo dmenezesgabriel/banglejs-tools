@@ -1,5 +1,5 @@
 run:
 	yarn run app
 
-certficates:
+certificates:
 	./scripts/gen-cer.sh

@@ -1,14 +1,18 @@
+import { readFileSync } from "fs";
 import { createServer } from "https";
-import { readFileSync, createReadStream } from "fs";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import express from "express";
+const privateKey = readFileSync("ssl/key.pem");
+const certificate = readFileSync("ssl/cert.pem");
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const credentials = { key: privateKey, cert: certificate };
+const port = 8000;
+const app = express();
 
-const option = {
-  key: readFileSync("key.pem"),
-  cert: readFileSync("cert.pem"),
-};
+app.use(express.static("public"));
 
-const server = createServer(option, function (req, res) {
-  res.writeHead(200, { "content-type": "text/html" });
-  createReadStream("index.html").pipe(res);
-});
+const httpServer = createServer(credentials, app);
 
-server.listen(process.env.PORT || 8000);
+httpServer.listen(process.env.PORT || 8000);
+console.log("Server started at https://localhost:" + port);
